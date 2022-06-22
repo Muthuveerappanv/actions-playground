@@ -37,10 +37,9 @@ jobs:
           role-to-assume: arn:aws:iam::684805258957:role/mv-lambda-deploy
           role-session-name: mvgithubsession
           
-      - name: List Files with the AWS CLI
+      - name: List all lambdas with the AWS CLI
         run: |
-          aws s3 ls
-
+          aws lambda list-functions
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
